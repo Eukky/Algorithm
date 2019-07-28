@@ -40,10 +40,10 @@ public:
                 last = mid - 1;
             }
         }
-        if(nums[first] != target){
+        if(nums[last] != target){
             return -1;
         }
-        return first;
+        return last;
     }
     vector<int> searchRange(vector<int>& nums, int target) {
         vector<int> result;
