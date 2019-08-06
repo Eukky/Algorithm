@@ -8,7 +8,7 @@
    #inlcude <iomanip>
    //只需设置一次，对之后所有输出数字都有效
    cout.setf(ios::fixed);
-   cout << setprecision(x);
+   cout << setprecision(x); //如果单独使用setprecision(x)则为保留x位有效数字
    ```
 
    - C中的写法
