@@ -216,6 +216,36 @@
 
     - 环的接入点：碰撞点p到连接点的距离=头指针到连接点的距离，因此，分别从碰撞点、头指针开始走，相遇的那个点就是连接点。
 
+    ```cpp
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode(int x) : val(x), next(NULL) {}
+     * };
+     */
+    ListNode *detectCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        int pos = 0;
+        while(fast != NULL && fast -> next != NULL){
+            slow = slow -> next;
+            fast = fast -> next -> next;
+            if(slow == fast){
+                slow = head;
+                while(slow != fast){
+                    pos++;
+                    slow = slow -> next;
+                    fast = fast -> next;
+                }
+                return fast;
+            }
+        }
+        return nullptr;
+    }
+    ```
+
   - 单链表反转
 
     ```cpp
